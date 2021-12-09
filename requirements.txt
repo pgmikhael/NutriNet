@@ -1,0 +1,16 @@
+torch
+sklearn
+tqdm
+gitpython
+datetime
+comet-ml
+pytorch-lightning
+remote-pdb
+pandas
+lightning-bolts
+scipy>=1.4.1
+yagmail
+spacy
+torchtext
+transformers
+umap-learn

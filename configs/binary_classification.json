@@ -1,0 +1,53 @@
+{
+        "grid_search_space": {
+            "dataset": ["recipes_binary"],
+            "batch_size": [64],
+            "accumulate_grad_batches": [1],
+            "cross_val_seed": [1212],
+            "assign_data_splits" : [true],
+            "train": [true],
+            "test": [true],
+            "data_dir": ["/Mounts/rbg-storage1/datasets/Recipe1M"],
+            "model_save_dir": ["/Mounts/rbg-storage1/snapshots/nlp864"],
+            "lightning_model_name": ["base"],
+            "base_model": ["gru", "transformer"],
+            "embed_size": [128],
+            "glove_name": ["6B"],
+            "hf_tokenizer_name": ["distilbert-base-uncased"],
+            "hf_model_name": ["distilbert-base-uncased"],
+            "hidden_dim": [128],
+            "bidirectional": [true],
+            "dim_feedforward": [256],
+            "num_heads": [2],
+            "num_encoder_layers": [5],
+            "loss_fns": ["multi_class_bce_loss"],
+            "metrics": ["multi_class_classification"],
+            "lr": [3e-4],
+            "lr_decay": [1e-1],
+            "weight_decay": [1e-5],
+            "dropout": [0.1],
+            "limit_train_batches": [1.0],
+            "limit_val_batches": [1.0],
+            "max_epochs": [20],
+            "val_check_interval": [1.0],
+            "num_sanity_val_steps": [0],
+            "patience": [3],
+            "optimizer": ["adam"],
+            "monitor": ["val_accuracy"],
+            "gpus": [1],
+            "num_workers": [8],
+            "project_name": ["course6"],
+            "workspace" : ["pgmikhael"],
+            "comet_tags":["classification"]
+    },
+    "paired_search_space":{
+            "input_loader_name": ["GloVe",  "AutoTokenizer", "AutoTokenizer"],
+            "use_embeddings": [false, true, false],
+            "use_bert_embeddings": [false, false, true]
+    },
+    "available_gpus": [1,2,3,4,5,6],
+    "script": "main"
+    }
+    
+    
+    

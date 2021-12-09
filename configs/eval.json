@@ -1,0 +1,41 @@
+{
+        "grid_search_space": {
+            "batch_size": [64],
+            "accumulate_grad_batches": [1],
+            "cross_val_seed": [1212],
+            "assign_data_splits" : [true],
+            "train": [false],
+            "test": [true],
+            "data_dir": ["/Mounts/rbg-storage1/datasets/Recipe1M"],
+            "model_save_dir": ["/Mounts/rbg-storage1/snapshots/nlp864"],
+            "lightning_model_name": ["base"],
+            "embed_size": [128],
+            "glove_name": ["6B"],
+            "hf_tokenizer_name": ["distilbert-base-uncased"],
+            "hf_model_name": ["distilbert-base-uncased"],
+            "val_check_interval": [1.0],
+            "num_sanity_val_steps": [0],
+            "dataset": ["recipes_binary"],
+            "loss_fns": ["multi_class_bce_loss"],
+            "metrics": ["multi_class_classification"],
+            "monitor": ["val_accuracy"],
+            "gpus": [1],
+            "num_workers": [8],
+            "project_name": ["course6"],
+            "workspace" : ["pgmikhael"],
+            "comet_tags":["eval"],
+	    "save_hiddens": [true],
+	    "hiddens_dir": ["/Mounts/rbg-storage1/results/nlp864"],
+	    "from_checkpoint": [true]
+    },
+    "paired_search_space":{
+            "input_loader_name": ["AutoTokenizer"],
+            "use_embeddings": [true],
+	    "checkpointed_path": ["/Mounts/rbg-storage1/logs/nlp864/323a38f14a83c0fedb855d2de2e14055.args"]
+    },
+    "available_gpus": [1,2,3,4,5,6],
+    "script": "main"
+    }
+    
+    
+    
