@@ -1,1 +1,1 @@
-# Recipe Generator
+# Nutrition Predictor from Recipes
